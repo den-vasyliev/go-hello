@@ -15,10 +15,10 @@ format:
 get:
 	go get
 
-build: format get
+build: 
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o ${APP}
 
-image: format get 
+image:
 	docker buildx build --platform ${TARGETOS}/${TARGETARCH} . -t ${REGESTRY}${APP}:${VERSION}-${TARGETOS}
 
 push:
