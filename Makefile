@@ -19,7 +19,7 @@ build:
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o ${APP}
 
 image:
-	docker buildx build --platform ${TARGETOS}/${TARGETARCH} . -t ${REGESTRY}${APP}:${VERSION}-${TARGETOS}
+	docker build build --platform ${TARGETOS}/${TARGETARCH} . -t ${REGESTRY}${APP}:${VERSION}-${TARGETOS}
 
 push:
 	docker push ${REGESTRY}${APP}:${VERSION}-${TARGETOS}
