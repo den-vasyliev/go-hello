@@ -24,6 +24,6 @@ image:
 push:
 	docker push ${REGESTRY}${APP}:${VERSION}-${TARGETOS}
 	
-clean: 
+clear: 
 	rm -rf ${APP}
 	docker rmi ${REGESTRY}${APP}:${VERSION}-${TARGETOS}
